@@ -6,16 +6,17 @@
 }
 
 h1  {
-    color: #FFFFFF;
+    color: #F0F8FF;
     margin-top: 10%;
     text-align: center;
     font-family: Georgia; 
     font-size: 45px;
 }
 h2{
-    color:aliceblue;
+    color: #F0F8FF;
     text-align: center;
     font-family: Georgia;
+    margin: 10px 0px;
 }
 
 #main{
@@ -111,20 +112,37 @@ li:hover{
     background-color: grey;
 }
 
+
+
 table{
     border-collapse: collapse; /* 1 Rand um Tablle*/
     width: 100%; /*Füllt "main" aus*/
     cursor: default;
+    position:relative;
 }
 .table{
     overflow-y: auto;
     height: 520px;
-    position: relative;
 }
 
-#test tr:nth-child(even){ background-color: #565656}
-#test tr:hover{ background-color: #262626;}
+tr{
+    background-color: #aeb4b9;
+}
+
+#test tr:nth-child(even){ background-color: #c4cad0;}
+#test tr:hover{ background-color: #dae7e7;}
 #test th{
-    color:aliceblue;
+    color: #F8F8FF;
     background-color: #3F2F2F;
+}
+
+#searchbar{
+    border: none;
+    border-bottom: 3px solid red;
+    margin-bottom: 5px;
+}
+#tablehead{
+    position: -webkit-sticky; /* Safari */
+    position: sticky; /* Geht nicht in IE und Edge 15*/
+    top: 0;
 }
