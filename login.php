@@ -1,4 +1,10 @@
 <!DOCTYPE HTML>
+<!--
+Projektarbeit LF6 von
+Lukas Walden
+Furkan Kocak
+Maik Röhl
+-->
 <?php
     include('register/server.php')
 ?>
