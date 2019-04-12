@@ -140,6 +140,7 @@ tr{
     border: none;
     border-bottom: 3px solid red;
     margin-bottom: 5px;
+    text-align: center;
 }
 #tablehead{
     position: -webkit-sticky; /* Safari */
