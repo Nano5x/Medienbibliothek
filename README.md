@@ -1,7 +1,7 @@
 # Projekt Medienbibliothek LF6
 Medienbibliothek von
-Lukas Walden
+Lukas Walden,
 Furkan Kocak
 und Maik Röhl
 
-Benutz wurden HTML, CSS, PHP, JQuery und MySQL
+Benutzt wurden HTML, CSS, PHP, JQuery und MySQL
