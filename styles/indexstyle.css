@@ -1,0 +1,132 @@
+﻿html{
+    background-image:  url(../pic/bild.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: auto; 
+}
+body { 
+
+}
+h1  {
+    color: #FFFFFF;
+    margin-top: 10%;
+    text-align: center;
+    font-family: Georgia; 
+    font-size: 45px;
+}
+h2{
+    color:aliceblue;
+    text-align: center;
+    font-family: Georgia;
+}
+
+#main{
+    text-align: center;
+    font-family: Georgia; 
+    width: 70%;
+    padding-top: 10px;
+    margin-left: 15%;
+    margin-right: 15%;
+    height: 600px;
+    background-color: #5F5f5f
+}
+
+.button div{
+    margin-top: 50px;
+}
+
+.button label {
+    height:240px;
+    border-radius: 5px;
+    text-align: center;
+    transition: 2s;
+    padding:20px 240px;  /*Höhe / Breite */
+    margin: 100px 0px;
+    background-color:#AfAfAf;
+
+}
+
+.button input{
+    display:none; /*radiobutton aus*/
+}
+
+.inhalt { /* Grundgerüst inhalt*/
+    position:relative;
+    z-index:-1;
+    margin: 0 auto;
+    height: 0;
+    color: #000000;
+    display: block;
+    opacity: 0;
+}
+
+.button input:checked+label{ 
+    background: radial-gradient(circle, transparent 1%, #2f2f2f)center/110%;
+    color: black;
+
+}
+.button input:hover+label{ 
+    transition: 1.4s;
+    background: radial-gradient(circle, transparent 1%, #2f2f2f)center/110%;
+    color: black;
+    cursor: pointer;
+
+}
+
+.button input:checked ~ .inhalt { /* Veränderung bei klick */
+    height: auto;
+    margin-top:20px;
+    padding-top: 20px;
+    z-index: auto;
+    opacity: 1;
+}
+
+.button label:after {
+    content:" \2B9E";
+    
+}
+.button input:checked+label:after {
+    content:" \2B9F";
+}
+
+ul{
+    width: 240px;
+
+}
+li{
+    margin-right: 41px;
+    display: block;
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #AFAFAF;
+    margin-top: 1em; /* Abstand zwischen den Li*/
+    cursor: pointer;
+}
+a {
+    text-decoration: none;
+    color: #000000;
+}
+li:hover{
+     background: radial-gradient(circle, transparent 1%, #2f2f2f)center/110%;
+    transition: 1s;
+    background-color: grey;
+}
+
+table{
+    border-collapse: collapse; /* 1 Rand um Tablle*/
+    width: 100%; /*Füllt "main" aus*/
+    cursor: default;
+}
+.table{
+    overflow-y: auto;
+    height: 520px;
+    position: relative;
+}
+
+#test tr:nth-child(even){ background-color: #565656}
+#test tr:hover{ background-color: #262626;}
+#test th{
+    color:aliceblue;
+    background-color: #3F2F2F;
+}

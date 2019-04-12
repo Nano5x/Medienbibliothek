@@ -1,0 +1,94 @@
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url(../pic/bild.jpg);
+}
+
+* {  /* hält input felder innerhalb des Div main*/
+    box-sizing: border-box;
+}
+
+
+.main {
+    padding: 16px;
+    background-color: #5F5f5f;
+}
+
+
+label{
+    color:aliceblue;
+}
+/* Eingabefelder aussehen */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+/* Eingabefelder aussehen */
+input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+.head{
+     color:aliceblue;
+}
+
+hr {
+    border: none;
+    width: auto;
+    height: 50px;
+    border-bottom: 1px solid #1f1209;
+    margin-bottom: 25px;
+    box-shadow: 0px 20px 20px -20px #333333;
+    margin-top: 0;
+    margin: -50px auto 10px;
+}
+
+/* Registerbutton aussehen */
+.registerbtn {
+    height:auto;
+    border: double;
+    border-radius: 5px;
+    text-align: center;
+    padding:20px 200px;  /*Höhe / Breite */
+    margin-left: 30%;
+    background-color:whitesmoke;
+    font-family: Helvetica;
+    opacity: 0.7;
+}
+
+.registerbtn:hover {
+      opacity: 1;
+}
+
+
+a {
+      color: black; /* Lässt Links Schwarz aussehen*/ 
+
+}
+
+
+.footer {
+  background-color: #f1f1f1;
+  text-align: center;
+  padding 16px;
+}
+
+
+
+
+.error{
+    color: red;
+    width: 92%;
+    margin: 0px auto;
+    padding: 10px;
+    border: 1px solid #a94042;
+    background: #f2dede;
+    border-radius: 5px;
+    text-align: left;
+}
