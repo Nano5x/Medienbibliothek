@@ -27,7 +27,7 @@
         <script src="../js/jquery.js"></script>
         <script src="../js/suchfeld.js"></script>
         <meta charset="UTF-8">
-        <title> Medienbibliothek </title>
+        <title> Medienbibliothek - Spiele</title>
         <link rel="stylesheet" type="text/css" href="../styles/indexstyle.css">
     </head>
 
@@ -40,7 +40,6 @@
             </h1> 
         <?php endif ?>
     <div id="main">
-        <input id="searchbar" type="text" placeholder="Suche">
         <?php
             $con = mysqli_connect('localhost','root','','medienbibliothek') or die ("Keine Verbindung möglich");
         
@@ -50,13 +49,16 @@
 
         $res = mysqli_query ($con, $select);
         echo "<h2>Ihre Sammlung</h2>";
+        echo '<input id="searchbar" type="text" placeholder="Suche">';
     echo '<div class=table>';
         echo '<table id="test" border ="1">';
+        echo '<div id="tablehead">';
             echo "<tr>";
               echo "<th>Spieltitel</th>";
               echo  "<th>Typ</th>";
               echo  "<th>Genre</th>";
               echo  "<th>Erscheinungsjahr</th>";
+        echo '</div>';
             echo "</tr>";
     echo '<tbody id="tbody">';
             while ($row = mysqli_fetch_array($res))
