@@ -1,4 +1,4 @@
-# projekt
+# Projekt Medienbibliothek LF6
 Medienbibliothek von
 Lukas Walden
 Furkan Kocak
