@@ -51,6 +51,7 @@
         $res = mysqli_query ($con, $select);
         echo "<h2>Ihre Musik</h2>";
         echo '<input id="searchbar" type="text" placeholder="Suche">';
+        echo '<a id="back" href="../index.php">Zurück</a>';
     echo '<div class=table>';
         echo '<table id="test" border ="1">';
             echo "<tr>";
