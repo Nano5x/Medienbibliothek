@@ -80,12 +80,36 @@
     </div>
         
     <div id="footer">
+ <hr>
+        <a href='index.php?deleteuser=true'> Account Löschen </a>
         
-        <a href="index.php?logout='1'"><hr></a>
-        <p> test </p>
+        <?php function DeleteUser(){
+                $con = mysqli_connect('localhost','root','','medienbibliothek');
+            $sessionuser = $_SESSION["Benutzername"];
+    
+            $userdelete1 = "DELETE FROM benutzer WHERE Benutzername='$sessionuser'";
+                $userdelete2 = mysqli_query($con, $userdelete1);
+    
+            $deletefilm1 = "DELETE FROM filme WHERE username='$sessionuser'";
+                $deletefilm2 = mysqli_query($con, $deletefilm1);
+    
+            $deletemusik1 = "DELETE FROM musik WHERE username='$sessionuser'";
+                $deletemusik2 = mysqli_query($con, $deletemusik1);
+    
+            $deletespiel1 = "DELETE FROM spiele WHERE username='$sessionuser'";
+                $deletespiel2 = mysqli_query($con, $deletespiel1);
+    
+        header('location: ..\medienbibliothek\login.php');
+    
+                mysqli_close($con);
+        }
+         if (isset($_GET['deleteuser'])){
+             DeleteUser();
+         }
+        
+        ?>
         
 
     </div>
-<script src="js/test.js"></script>
     </body>
 </html>
