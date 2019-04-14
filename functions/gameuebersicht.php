@@ -45,37 +45,39 @@
         
         $sessionuser = $_SESSION['Benutzername'];
         //$select = "SELECT titel, typ, genre, erscheinungsjahr, regisseur FROM filme WHERE $sessionuser";
-        $select = "SELECT * FROM spiele WHERE username ='$sessionuser'   ";
+        $select = "SELECT * FROM spiele WHERE username ='$sessionuser'";
 
         $res = mysqli_query ($con, $select);
-        echo "<h2>Ihre Sammlung</h2>";
+        echo "<h2>Ihre Spiele</h2>";
         echo '<input id="searchbar" type="text" placeholder="Suche">';
         echo '<a id="back" href="../index.php">Zurück</a>';
     echo '<div class=table>';
         echo '<table id="test" border ="1">';
         echo '<div id="tablehead">';
             echo "<tr>";
-              echo "<th>Spieltitel</th>";
-              echo  "<th>Typ</th>";
-              echo  "<th>Genre</th>";
-              echo  "<th>Erscheinungsjahr</th>";
+                echo  "<th>Spieltitel</th>";
+                echo  "<th>Typ</th>";
+                echo  "<th>Genre</th>";
+                echo  "<th>Erscheinungsjahr</th>";
+                echo  '<th id="deletewidth">Delete</th>';
         echo '</div>';
             echo "</tr>";
     echo '<tbody id="tbody">';
             while ($row = mysqli_fetch_array($res))
             {
             echo "<tr>";
-                   echo "<td>". $row['Titel'] ."</td>";
-                   echo "<td>". $row['Typ'] ."</td>";
-                   echo "<td>". $row['Genre'] ."</td>";
-                   echo "<td>". $row['Erscheinungsjahr'] ."</td>";
+                    echo "<td>". $row['Titel'] ."</td>";
+                    echo "<td>". $row['Typ'] ."</td>";
+                    echo "<td>". $row['Genre'] ."</td>";
+                    echo "<td>". $row['Erscheinungsjahr'] ."</td>";
+                    echo '<td id="deletewidth"> <a href="../register/deletegame.php?sID='. $row['sID'] .'"><img id="deletebild" src="../pic/garbage_can.png"></a></td>';
+               // echo '<td><a href="../register/deletegame.php?id='.$row['sID'].'">Delete</a></td>';
             echo "</tr>";
         
             }
         echo '</tbody>';
         echo "</table>";
    echo '</div>';
-        mysqli_close($con);
             ?>
     </div>
         
@@ -83,8 +85,11 @@
  <hr>
         <a href='index.php?deleteuser=true'> Account Löschen </a>
         
-        <?php function DeleteUser(){
-                $con = mysqli_connect('localhost','root','','medienbibliothek');
+        <?php 
+
+
+        function DeleteUser(){
+                
             $sessionuser = $_SESSION["Benutzername"];
     
             $userdelete1 = "DELETE FROM benutzer WHERE Benutzername='$sessionuser'";
@@ -103,6 +108,7 @@
     
                 mysqli_close($con);
         }
+        
          if (isset($_GET['deleteuser'])){
              DeleteUser();
          }

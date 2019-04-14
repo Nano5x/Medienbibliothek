@@ -48,7 +48,7 @@
         $select = "SELECT * FROM filme WHERE username ='$sessionuser'   ";
 
         $res = mysqli_query ($con, $select);
-        echo "<h2>Ihre Sammlung</h2>";
+        echo "<h2> Ihre Filme/Serien </h2>";
         echo '<input id="searchbar" type="text" placeholder="Suche">';
         echo '<a id="back" href="../index.php">Zurück</a>';
     echo '<div class=table>';
@@ -60,6 +60,7 @@
               echo  "<th>Genre</th>";
               echo  "<th>Erscheinungsjahr</th>";
               echo  "<th>Regisseur</th>";
+              echo  '<th id="deletewidth">Delete</th>';
         echo '</div>';
             echo "</tr>";
         echo '<tbody id="tbody">';
@@ -71,6 +72,7 @@
                    echo "<td>". $row['Genre'] ."</td>";
                    echo "<td>". $row['Erscheinungsjahr'] ."</td>";
                    echo "<td>". $row['Regisseur'] ."</td>";
+                   echo '<td> <a href="../register/deletefilm.php?fID='. $row['fID'] .'"><img id="deletebild" src="../pic/garbage_can.png"></a></td>';
             echo "</tr>";
         
             }

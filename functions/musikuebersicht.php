@@ -56,11 +56,12 @@
         echo '<table id="test" border ="1">';
             echo "<tr>";
             echo '<div id="tablehead">';
-              echo "<th>Songtitel</th>";
-              echo  "<th>Interpret</th>";
-              echo  "<th>Genre</th>";
-              echo  "<th>Erscheinungsjahr</th>";
-              echo  "<th>Album</th>";
+                echo  "<th>Songtitel</th>";
+                echo  "<th>Interpret</th>";
+                echo  "<th>Genre</th>";
+                echo  "<th>Erscheinungsjahr</th>";
+                echo  "<th>Album</th>";
+                echo  '<th id="deletewidth">Delete</th>';
             echo '</div>';
             echo "</tr>";
         echo '<tbody id="tbody">';
@@ -72,6 +73,7 @@
                    echo "<td>". $row['Genre'] ."</td>";
                    echo "<td>". $row['Erscheinungsjahr'] ."</td>";
                    echo "<td>". $row['Album'] ."</td>";
+                   echo '<td> <a href="../register/deletemusik.php?mID='. $row['mID'] .'"><img id="deletebild" src="../pic/garbage_can.png"></a></td>';
             echo "</tr>";
             }
         echo '</tbody>';
