@@ -57,9 +57,9 @@ h1  {
 	opacity: 1;
 }
 
-a {
+i, a {
     text-decoration: none;
-    color: black;
+    color: #FFFFFF;
 }
 
 input[type=text], input[type=password] {
