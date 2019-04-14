@@ -8,8 +8,7 @@
 
 <!DOCTYPE HTML>
 <?php 
-    session_start();
-
+session_start();
     if(!isset($_SESSION['Benutzername'])) { //Abfrage ob Benutzer eingeloggt, wenn nicht dann leite zurück auf login
         $_SESSION['msg'] = "Log dich erst ein";
         header('location: login.php');
@@ -50,24 +49,24 @@
                      
                 </div>     -->                   
                 <ul class="inhalt">
-                    <li> <a href="../projekt/functions/filmuebersicht.php"> Übersicht</a> </li>
-                    <li> <a href="../projekt/functions/filmhinzufuegen.php">Hinzufügen</a> </li>
+                    <li> <a href="../medienbibliothek/functions/filmuebersicht.php"> Übersicht</a> </li>
+                    <li> <a href="../medienbibliothek/functions/filmhinzufuegen.php">Hinzufügen</a> </li>
                 </ul>
             </div>
             <div>
                 <input type="radio" name="eins" id="button-2"> 
                 <label class="knopf" for="button-2">Spiele</label>
                 <ul class="inhalt">
-                    <li> <a href="../projekt/functions/gameuebersicht.php">Übersicht</a> </li>
-                    <li> <a href="../projekt/functions/spielehinzufuegen.php">Hinzufügen</a> </li>
+                    <li> <a href="../medienbibliothek/functions/gameuebersicht.php">Übersicht</a> </li>
+                    <li> <a href="../medienbibliothek/functions/spielehinzufuegen.php">Hinzufügen</a> </li>
                 </ul>
             </div>
             <div>
                 <input type="radio" name="eins" id="button-3"> 
                 <label class="knopf" for="button-3">Musik</label>
                 <ul class="inhalt">
-                    <li> <a href="../projekt/functions/musikuebersicht.php">Übersicht</a> </li>
-                    <li> <a href="../projekt/functions/musikhinzufuegen.php">Hinzufügen</a> </li>
+                    <li> <a href="../medienbibliothek/functions/musikuebersicht.php">Übersicht</a> </li>
+                    <li> <a href="../medienbibliothek/functions/musikhinzufuegen.php">Hinzufügen</a> </li>
                 </ul>
             </div>
         </div>
@@ -75,10 +74,35 @@
     </div>
         
     <div id="footer">
+
+        <hr>
+        <a href='index.php?deleteuser=true'> Account Löschen </a>
         
-        <a><hr></a>
-        <p> test </p>
+        <?php function DeleteUser(){
+                $con = mysqli_connect('localhost','root','','medienbibliothek');
+            $sessionuser = $_SESSION["Benutzername"];
+    
+            $userdelete1 = "DELETE FROM benutzer WHERE Benutzername='$sessionuser'";
+                $userdelete2 = mysqli_query($con, $userdelete1);
+    
+            $deletefilm1 = "DELETE FROM filme WHERE username='$sessionuser'";
+                $deletefilm2 = mysqli_query($con, $deletefilm1);
+    
+            $deletemusik1 = "DELETE FROM musik WHERE username='$sessionuser'";
+                $deletemusik2 = mysqli_query($con, $deletemusik1);
+    
+            $deletespiel1 = "DELETE FROM spiele WHERE username='$sessionuser'";
+                $deletespiel2 = mysqli_query($con, $deletespiel1);
+    
+        header('location: ..\medienbibliothek\login.php');
+    
+                mysqli_close($con);
+        }
+         if (isset($_GET['deleteuser'])){
+             DeleteUser();
+         }
         
+        ?>
 <?php endif ?>
     </div>
     </body>
