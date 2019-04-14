@@ -13,7 +13,7 @@
 
     <body>
 
-    <form methode="post" action="spielehinzufuegen.php" > 
+    <form method="post" action="spielehinzufuegen.php" > 
         
         <div class="main">
             <div class="head">

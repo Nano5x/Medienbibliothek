@@ -13,7 +13,7 @@
 
     <body>
 
-    <form methode="post" action="musikhinzufuegen.php" > 
+    <form method="post" action="musikhinzufuegen.php" > 
         
         <div class="main">
             <div class="head">
