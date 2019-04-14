@@ -34,7 +34,7 @@
             <input type="text" placeholder="" name="release" required>
             
             <label for="album"><b> Album </b></label>
-            <input type="text" placeholder="" name="Album" required>
+            <input type="text" placeholder="" name="album" required>
             <hr>
 
             <button type="submit" class="registerbtn" name="musikinsert"><b>Hinzufügen</b></button>
