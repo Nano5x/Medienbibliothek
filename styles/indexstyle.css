@@ -171,6 +171,7 @@ tr{
     background-color: #AFAFAF;
     float:left;
     margin-left: 50px;
+    margin-top: -5px;
     padding: 10px 30px;
 }
 #logout:hover{
@@ -178,4 +179,10 @@ tr{
     background: radial-gradient(circle, transparent 1%)center/120%;
     transition: 1s;
     
+}
+
+#footer{
+    background-color: #f1f1f1;
+    text-align: center;
+    padding 15px;
 }
