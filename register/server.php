@@ -42,7 +42,7 @@ if (isset($_POST['reg_user'])){
 //Benutzer registrierung ohne error
 if (count($errors) == 0){
     $pass = md5($pass);
-    $add = "INSERT INTO Benutzer (Benutzername, name, vorname, pass) VALUES('$username', '$name', '$vorname', '$pass')";
+    $add = "INSERT INTO benutzer (Benutzername, name, vorname, pass) VALUES('$username', '$name', '$vorname', '$pass')";
     $results = mysqli_query($con, $add);
     $_SESSION['Benutzername'] = $username;
     $_SESSION['success'] = "$vorname's Medienbibliothek"; 
@@ -139,7 +139,5 @@ if(isset($_POST['musikinsert'])){
         $result = mysqli_query($con, $add);
         header('location: ..\index.php');
 }
-
-
 
 ?>

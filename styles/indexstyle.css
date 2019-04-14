@@ -62,13 +62,13 @@ h2{
 }
 
 .button input:checked+label{ 
-    background: radial-gradient(circle, transparent 1%, #2f2f2f)center/110%;
+    background: radial-gradient(circle, transparent 0.15%, #2F2F2F)center/110%;
     color: black;
 
 }
 .button input:hover+label{ 
     transition: 1.4s;
-    background: radial-gradient(circle, transparent 1%, #2f2f2f)center/110%;
+    background: radial-gradient(circle, transparent 0.15%, #2F2F2F)center/110%;
     color: black;
     cursor: pointer;
 
@@ -108,8 +108,11 @@ a {
     text-decoration: none;
     color: #000000;
 }
+hr{
+     color: #F8F8FF;
+}
 li:hover{
-     background: radial-gradient(circle, transparent 1%, #2f2f2f)center/110%;
+    background: radial-gradient(circle, transparent 1%)center/110%;
     transition: 1s;
     background-color: grey;
 }
@@ -161,4 +164,18 @@ tr{
     left: -450px;
     top: -5px;
     padding: 5px 10px;
+}
+
+#logout{
+    border-radius: 5px;
+    background-color: #AFAFAF;
+    float:left;
+    margin-left: 50px;
+    padding: 10px 30px;
+}
+#logout:hover{
+    background-color: #F8F8FF;
+    background: radial-gradient(circle, transparent 1%)center/120%;
+    transition: 1s;
+    
 }

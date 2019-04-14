@@ -37,7 +37,7 @@
         <?php endif ?>
     <div id="main">    
 
-        
+        <a href="index.php?logout='1'" id="logout"> Logout </a>
         <?php if (isset($_SESSION['Benutzername'])) : ?>
         <div class="button">
             <div>
@@ -71,11 +71,12 @@
                 </ul>
             </div>
         </div>
+        
     </div>
         
     <div id="footer">
         
-        <a href="index.php?logout='1'"><hr></a>
+        <a><hr></a>
         <p> test </p>
         
 <?php endif ?>
