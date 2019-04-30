@@ -104,7 +104,7 @@
             $deletespiel1 = "DELETE FROM spiele WHERE username='$sessionuser'";
                 $deletespiel2 = mysqli_query($con, $deletespiel1);
     
-        header('location: ..\medienbibliothek\login.php');
+        header('location: ..\login.php');
     
                 mysqli_close($con);
         }
