@@ -32,7 +32,7 @@
     </head>
 
     <body>  
-             <?php if(isset($_SESSION['success'])) : ?> <!--Notification Nachricht aus server.php-->
+             <?php if(isset($_SESSION['success'])) : ?> <!--Notification Nachricht aus server.php   -->
             <h1>
                 <?php
                     echo $_SESSION['success'];
@@ -43,19 +43,19 @@
         <?php
             $con = mysqli_connect('localhost','root','','medienbibliothek') or die ("Keine Verbindung möglich");
         
-        $sessionuser = $_SESSION['Benutzername'];
-        //$select = "SELECT titel, typ, genre, erscheinungsjahr, regisseur FROM filme WHERE $sessionuser";
+        $sessionuser = $_SESSION['Benutzername']; // Session Benutzername in extra Variable gespeichert, zur weiter verwendung im Select befehl
+       
         $select = "SELECT * FROM spiele WHERE username ='$sessionuser'";
 
         $res = mysqli_query ($con, $select);
-        echo "<h2>Ihre Spiele</h2>";
+        echo "<h2>Ihre Spiele</h2>";                                        /* Tabelle */
         echo '<input id="searchbar" type="text" placeholder="Suche">';
         echo '<a id="back" href="../index.php">Zurück</a>';
     echo '<div class=table>';
         echo '<table id="test" border ="1">';
         echo '<div id="tablehead">';
             echo "<tr>";
-                echo  "<th>Spieltitel</th>";
+                echo  "<th>Spieltitel</th>";                /* Table Head */
                 echo  "<th>Typ</th>";
                 echo  "<th>Genre</th>";
                 echo  "<th>Erscheinungsjahr</th>";
@@ -66,12 +66,12 @@
             while ($row = mysqli_fetch_array($res))
             {
             echo "<tr>";
-                    echo "<td>". $row['Titel'] ."</td>";
+                    echo "<td>". $row['Titel'] ."</td>";                /* ausgabe von Datensätzen die in der Datenbank eingespeichert wurden*/
                     echo "<td>". $row['Typ'] ."</td>";
                     echo "<td>". $row['Genre'] ."</td>";
                     echo "<td>". $row['Erscheinungsjahr'] ."</td>";
-                    echo '<td id="deletewidth"> <a href="../register/deletegame.php?sID='. $row['sID'] .'"><img id="deletebild" src="../pic/garbage_can.png"></a></td>';
-               // echo '<td><a href="../register/deletegame.php?id='.$row['sID'].'">Delete</a></td>';
+                    echo '<td id="deletewidth"> <a href="../register/deletegame.php?sID='. $row['sID'] .'"><img id="deletebild" src="../pic/garbage_can.png"></a></td>'; /*aufruf von deletegame mit übergabe der sID und der reihe des Datensatzes, um angegklickten datensatz zu löschen*/
+               
             echo "</tr>";
         
             }
@@ -83,7 +83,7 @@
         
     <div id="footer">
  <hr>
-        <a href='index.php?deleteuser=true'> Account Löschen </a>
+        <a href='index.php?deleteuser=true'> Account Löschen </a> <!-- aufrug von $_GET['deleteuser'] -->
         
         <?php 
 
@@ -107,9 +107,9 @@
         header('location: ..\login.php');
     
                 mysqli_close($con);
-        }
+        }   /* Benutzer löschen funktion*/
         
-         if (isset($_GET['deleteuser'])){
+         if (isset($_GET['deleteuser'])){  /*Funktionsaufruf DeleteUser*/
              DeleteUser();
          }
         

@@ -45,12 +45,11 @@
             $con = mysqli_connect('localhost','root','','medienbibliothek') or die ("Keine Verbindung möglich");
         
         $sessionuser = $_SESSION['Benutzername'];
-        //$select = "SELECT titel, typ, genre, erscheinungsjahr, regisseur FROM filme WHERE $sessionuser";
         $select = "SELECT * FROM musik WHERE username ='$sessionuser'   ";
 
         $res = mysqli_query ($con, $select);
         echo "<h2>Ihre Musik</h2>";
-        echo '<input id="searchbar" type="text" placeholder="Suche">';
+        echo '<input id="searchbar" type="text" placeholder="Suche">'; /*Siehe gameuebersicht.php für Quellcode Dokumentation*/
         echo '<a id="back" href="../index.php">Zurück</a>';
     echo '<div class=table>';
         echo '<table id="test" border ="1">';

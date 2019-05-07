@@ -61,12 +61,12 @@ h2{
     opacity: 0;
 }
 
-.button input:checked+label{ 
+.button input:checked+label{ /* aussehen von den buttons wenn sie angehackt sind */
     background: radial-gradient(circle, transparent 0.15%, #2F2F2F)center/110%;
     color: black;
 
 }
-.button input:hover+label{ 
+.button input:hover+label{ /* aussehen von den buttons wenn man über sie hovert */
     transition: 1.4s;
     background: radial-gradient(circle, transparent 0.15%, #2F2F2F)center/110%;
     color: black;
@@ -152,7 +152,7 @@ tr{
 }
 #tablehead{
     position: -webkit-sticky; /* Safari */
-    position: sticky; /* Geht nicht in IE und Edge 15*/
+    position: sticky; /* Geht nicht in IE und Edge 15 testweise auch in keinen anderen Browser (sinn und zweck war das "Festhalten" vom tablehead mit beispielweise den titeln*/
     top: 0;
 }
 

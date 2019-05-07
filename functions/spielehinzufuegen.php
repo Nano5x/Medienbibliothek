@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <?php
-    include('../register/server.php');
+    include('../register/server.php');  
 
 ?>
 
@@ -21,24 +21,24 @@
                 <p>Bitte füllen Sie dieses Dokument aus um ein Spiel Ihrer Bibliothek hinzuzufügen</p>
             </div>
         <hr>
-            <label for="titel"><b> Spieltitel </b></label>
+            <label for="titel"><b> Spieltitel </b></label>   <!-- Spieltitel Feld -->
             <input type="text" placeholder="" name="titel" required>
             
-            <label for="typ"><b> Typ </b></label>
+            <label for="typ"><b> Typ </b><i>(Plattform)</i></label>   <!-- Typ (PLttform) Feld -->
             <input type="text" placeholder="" name="typ" required>
             
-            <label for="genre"><b> Genre </b></label>
+            <label for="genre"><b> Genre </b></label>   <!-- Genre Feld -->
             <input type="text" placeholder="" name="genre" required>
             
-            <label for="release"><b> Erscheinungsjahr </b></label>
+            <label for="release"><b> Erscheinungsjahr </b></label>   <!-- Erscheinungsjahr Feld -->
             <input type="text" placeholder="" name="release" required>
             <hr>
 
-            <button type="submit" class="registerbtn" name="gameinsert"><b>Hinzufügen</b></button>
+            <button type="submit" class="registerbtn" name="gameinsert"><b>Hinzufügen</b></button>    <!-- Weitergabe an server.php in gameinsert "funktion" -->
         </div>
     </form>
             <div class="footer">
-                <p><i>Zurück zur <a href="../index.php">Startseite</a></i>.</p>  
+                <p><i>Zurück zur <a href="../index.php">Startseite</a></i>.</p>  <!-- zurück zur startseite -->
             </div>
     </body>
 </html>

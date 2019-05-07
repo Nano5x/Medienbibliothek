@@ -33,27 +33,21 @@ session_start();
                     echo $_SESSION['success'];
                 ?>
             </h1> 
-        <?php endif ?>
+        <?php endif ?> <!-- Endif zeile 30-->
     <div id="main">    
 
-        <a href="index.php?logout='1'" id="logout"> Logout </a>
+        <a href="index.php?logout='1'" id="logout"> Logout </a> <!-- Logout Button-->
         <?php if (isset($_SESSION['Benutzername'])) : ?>
         <div class="button">
-            <div>
+            <div>                                           <!-- Radiobutton filme dessen aussehen in der css geändert wurde-->
                 <input type="radio" name="eins" id="button-1"> 
-                <label id="filmbg" class="knopf" for="button-1">Filme</label>
-             <!--    <div class="inhalt">
-                    <button class="inbutton"> Übersicht </button>
-                    <button class="inbutton"> Hinzufügen </button>
-                    <button class="inbutton"> Suchen </button>
-                     
-                </div>     -->                   
+                <label id="filmbg" class="knopf" for="button-1">Filme</label>                 
                 <ul class="inhalt">
                     <li> <a href="../medienbibliothek/functions/filmuebersicht.php"> Übersicht</a> </li>
                     <li> <a href="../medienbibliothek/functions/filmhinzufuegen.php">Hinzufügen</a> </li>
                 </ul>
             </div>
-            <div>
+            <div>                                           <!-- Radiobutton filme dessen aussehen in der css geändert wurde-->      
                 <input type="radio" name="eins" id="button-2"> 
                 <label class="knopf" for="button-2">Spiele</label>
                 <ul class="inhalt">
@@ -61,7 +55,7 @@ session_start();
                     <li> <a href="../medienbibliothek/functions/spielehinzufuegen.php">Hinzufügen</a> </li>
                 </ul>
             </div>
-            <div>
+            <div>                                           <!-- Radiobutton musik dessen aussehen in der css geändert wurde-->
                 <input type="radio" name="eins" id="button-3"> 
                 <label class="knopf" for="button-3">Musik</label>
                 <ul class="inhalt">
@@ -73,7 +67,7 @@ session_start();
         
     </div>
         
-    <div id="footer">
+    <div id="footer"> <!-- "weißer" bereich unterhalt der Website -->
 
         <hr>
         <a href='index.php?deleteuser=true'> Account Löschen </a>
@@ -103,7 +97,7 @@ session_start();
          }
         
         ?>
-<?php endif ?>
+<?php endif ?><!-- Endif von zeile 12 --> 
     </div>
     </body>
 </html>

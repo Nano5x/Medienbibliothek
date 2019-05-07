@@ -36,10 +36,7 @@ Maik Röhl
         
     </div> <!-- Ende backround -->
     <div id="footer">
-        
-        <hr>
-        <p> test </p>  
-
+        <hr>  
     </div>
         
     </body>
