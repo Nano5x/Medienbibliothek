@@ -9,7 +9,7 @@
 <!DOCTYPE HTML>
 <?php 
     session_start();
-
+         include('../register/server.php');  
     if(!isset($_SESSION['Benutzername'])) { //Abfrage ob Benutzer eingeloggt, wenn nicht dann leite zurück auf login
         $_SESSION['msg'] = "Log dich erst ein";
         header('location: login.php');
@@ -40,8 +40,7 @@
             </h1> 
         <?php endif ?>
     <div id="main">
-        <?php
-            $con = mysqli_connect('localhost','root','','medienbibliothek') or die ("Keine Verbindung möglich");
+        <?php        
         
         $sessionuser = $_SESSION['Benutzername'];
         $select = "SELECT * FROM filme WHERE username ='$sessionuser'   ";
@@ -88,7 +87,7 @@
         <a href='index.php?deleteuser=true'> Account Löschen </a>
         
         <?php function DeleteUser(){
-                $con = mysqli_connect('localhost','root','','medienbibliothek');
+                
             $sessionuser = $_SESSION["Benutzername"];
     
             $userdelete1 = "DELETE FROM benutzer WHERE Benutzername='$sessionuser'";
