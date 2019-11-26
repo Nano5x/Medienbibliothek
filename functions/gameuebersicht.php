@@ -10,6 +10,8 @@
 <?php 
     session_start();
 
+    include('../register/server.php');  
+
     if(!isset($_SESSION['Benutzername'])) { //Abfrage ob Benutzer eingeloggt, wenn nicht dann leite zurück auf login
         $_SESSION['msg'] = "Log dich erst ein";
         header('location: login.php');
@@ -40,9 +42,7 @@
             </h1> 
         <?php endif ?>
     <div id="main">
-        <?php
-            $con = mysqli_connect('localhost','root','','medienbibliothek') or die ("Keine Verbindung möglich");
-        
+        <?php        
         $sessionuser = $_SESSION['Benutzername']; // Session Benutzername in extra Variable gespeichert, zur weiter verwendung im Select befehl
        
         $select = "SELECT * FROM spiele WHERE username ='$sessionuser'";
