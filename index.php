@@ -18,6 +18,7 @@ session_start();
         unset($_SESSION['Benutzername']);
         header("location: login.php");
     }
+ include('../register/server.php');  
 ?>
 <html> 
     <head>
@@ -73,7 +74,7 @@ session_start();
         <a href='index.php?deleteuser=true'> Account Löschen </a>
         
         <?php function DeleteUser(){
-                $con = mysqli_connect('localhost','root','','medienbibliothek');
+               
             $sessionuser = $_SESSION["Benutzername"];
     
             $userdelete1 = "DELETE FROM benutzer WHERE Benutzername='$sessionuser'";
