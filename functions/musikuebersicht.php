@@ -10,7 +10,7 @@
 <?php 
     session_start();
 
-    include('server.php');
+     include('../register/server.php');  
 
     if(!isset($_SESSION['Benutzername'])) { //Abfrage ob Benutzer eingeloggt, wenn nicht dann leite zurück auf login
         $_SESSION['msg'] = "Log dich erst ein";
