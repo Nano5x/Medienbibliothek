@@ -10,6 +10,8 @@
 <?php 
     session_start();
 
+    include('server.php');
+
     if(!isset($_SESSION['Benutzername'])) { //Abfrage ob Benutzer eingeloggt, wenn nicht dann leite zurück auf login
         $_SESSION['msg'] = "Log dich erst ein";
         header('location: login.php');
@@ -88,7 +90,7 @@
         <a href='index.php?deleteuser=true'> Account Löschen </a>
         
         <?php function DeleteUser(){
-                $con = mysqli_connect('localhost','root','','medienbibliothek');
+                
             $sessionuser = $_SESSION["Benutzername"];
     
             $userdelete1 = "DELETE FROM benutzer WHERE Benutzername='$sessionuser'";
