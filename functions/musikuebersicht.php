@@ -44,7 +44,7 @@
     <div id="main">
         
         <?php
-            $con = mysqli_connect('localhost','root','','medienbibliothek') or die ("Keine Verbindung möglich");
+          
         
         $sessionuser = $_SESSION['Benutzername'];
         $select = "SELECT * FROM musik WHERE username ='$sessionuser'   ";
