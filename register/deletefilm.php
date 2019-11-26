@@ -1,11 +1,7 @@
 <?php 
-
 session_start();
-$con = mysqli_connect('localhost','root','','medienbibliothek'); /* Datenbank Verbindung herstellen für die Delete Film Funktion*/
-    if (mysqli_connect_errno()) {
-    echo "Error: " . mysqli_connect_error();
-    }
    
+    include('server.php');   
 
     $fid = $_GET['fID'];
 
